@@ -6,22 +6,22 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { PatientService } from './services/patient.services';
 import { PatientListComponent } from './componenets/patient-list/patient-list.component';
-import { PatientFormComponent } from './componenets/patient-form/patient-form.component';
 import { PatientDetailComponent } from './componenets/patient-detail/patient-detail.component';
 import { MaterialModule } from 'src/app/shared/material/material.module';
+import { AddPatientComponent } from './componenets/add-patient/add-patient.component';
 
 const routes = [
   { path: '', component: PatientListComponent },
-  { path: 'new', component: PatientFormComponent },
+  { path: 'new', component: AddPatientComponent },
   { path: ':id', component: PatientDetailComponent },
-  { path: ':id/edit', component: PatientFormComponent }
+  { path: ':id/edit', component: AddPatientComponent }
 ];
 
 @NgModule({
   declarations: [
     PatientListComponent,
-    PatientFormComponent,
-    PatientDetailComponent
+    PatientDetailComponent,
+    AddPatientComponent
   ],
   imports: [
     CommonModule,
