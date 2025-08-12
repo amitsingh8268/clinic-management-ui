@@ -1,0 +1,74 @@
+/*
+  General container for sidebar content.
+  - `padding-top`: Adds space from the top.
+*/
+.sidebar-content {
+  padding-top: 16px;
+}
+
+/*
+  Header section within the sidebar (logo and title).
+  - `display: flex`, `align-items`: Centers icon and text vertically.
+  - `margin-bottom`, `padding-bottom`, `border-bottom`: Visual separation.
+*/
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px; /* Space below header */
+  padding-bottom: 8px; /* Optional: adds space below the title */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separator */
+}
+
+/* Styling for the icon in the sidebar header */
+.sidebar-icon {
+  color: #60a5fa; /* text-blue-400 */
+  margin-right: 12px;
+  font-size: 28px;
+  width: 28px;
+  height: 28px;
+}
+
+/* Styling for the title in the sidebar header */
+.sidebar-title {
+  font-size: 28px; /* text-2xl */
+  font-weight: 800; /* font-extrabold */
+  letter-spacing: 0.05em; /* tracking-wider */
+  color: #e5e7eb; /* text-gray-200 */
+}
+
+/* Container for the navigation list */
+.sidebar-nav {
+  margin-top: 24px;
+}
+
+/* Styling for individual Material List items (navigation links) */
+.sidebar-nav .mat-list-item {
+  color: #d1d5db; /* Default link color (gray-300) */
+  border-radius: 8px; /* Slightly rounded for links */
+  margin-bottom: 8px; /* Space between links */
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  font-size: 1rem; /* base font size */
+  font-weight: 500; /* font-medium */
+}
+
+/* Hover state for sidebar navigation links */
+.sidebar-nav .mat-list-item:hover {
+  background-color: #ffffff; /* Hover background (gray-700) */
+  color: #ffffff; /* Hover text color (white) */
+}
+
+/* Styling for icons within sidebar navigation links */
+.sidebar-nav .mat-list-item .mat-icon {
+  margin-right: 12px;
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+.menu-text{
+ color: #ffffff
+}
+
+.menu-icon{
+   color: #ffffff !important;
+}

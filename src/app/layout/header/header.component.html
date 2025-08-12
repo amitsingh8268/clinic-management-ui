@@ -1,0 +1,27 @@
+<!--
+  Angular Material Toolbar for the application header.
+  - `class="app-header-toolbar"`: Custom class for styling.
+-->
+<mat-toolbar class="app-header-toolbar">
+  <!--
+    Toggle button for the sidebar.
+    - `mat-icon-button`: Styles it as a Material icon button.
+    - `(click)="onToggleSidebar()"`: Triggers the `onToggleSidebar` method, which emits an event.
+    - `aria-label`: Provides accessibility context for screen readers.
+  -->
+  <button mat-icon-button (click)="onToggleSidebar()" aria-label="Toggle sidebar">
+    <!-- Dynamically displays 'menu' (hamburger) or 'close' (X) icon based on `isSidebarOpen` input -->
+    <mat-icon>{{ isSidebarOpen ? 'close' : 'menu' }}</mat-icon>
+  </button>
+
+  <span class="app-title-header">Application Dashboard</span>
+
+  <!-- Spacer to push elements to the right -->
+  <span class="toolbar-spacer"></span>
+
+  <!-- User Info Section -->
+  <div class="user-info">
+    <span class="user-name">John Doe</span>
+    <img src="https://placehold.co/40x40/b8d6f2/265073?text=JD" alt="User Avatar" class="user-avatar"/>
+  </div>
+</mat-toolbar>

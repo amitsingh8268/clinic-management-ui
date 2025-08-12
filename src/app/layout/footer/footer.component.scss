@@ -1,0 +1,23 @@
+/*
+  Styling for the application footer.
+  - `background-color`: White background.
+  - `color`: Darker grey text.
+  - `text-align`: Centers the text.
+  - `padding`: Standard padding.
+  - `box-shadow`: Subtle top shadow.
+  - `border-top-left-radius`, `border-top-right-radius`: Rounded top corners.
+*/
+.app-footer-bar {
+  background-color: #ffffff;
+  color: #4b5563; /* text-gray-600 */
+  text-align: center;
+  padding: 16px 24px; /* py-4 px-6 */
+  box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1), 0 -2px 4px -2px rgba(0, 0, 0, 0.1); /* shadow-md */
+  border-top-left-radius: 12px; /* rounded-xl */
+  border-top-right-radius: 12px; /* rounded-xl */
+}
+
+/* Styling for the content inside the footer */
+.footer-content {
+  font-size: 14px; /* text-sm */
+}

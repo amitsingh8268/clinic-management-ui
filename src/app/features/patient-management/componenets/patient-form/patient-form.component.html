@@ -1,0 +1,119 @@
+<div class="patient-form-container">
+        <div class="patient-form-card">
+            <h2 class="form-title">Register New Patient</h2>
+            <p class="form-subtitle">
+                Fill in the details below to add a new patient to the system.
+            </p>
+
+            <form id="patientForm" class="patient-form">
+                <div class="form-grid">
+                    <!-- First Name -->
+                    <div class="full-width-field mat-form-field" data-key="firstName">
+                        <label class="mat-label" for="firstName">First Name</label>
+                        <input class="mat-input" type="text" id="firstName" placeholder="Enter patient first name" required minlength="2">
+                        <div class="mat-error" data-error-for="firstName" data-error-type="required">First Name is required.</div>
+                        <div class="mat-error" data-error-for="firstName" data-error-type="minlength">First Name must be at least 2 characters long.</div>
+                    </div>
+
+                    <!-- Last Name -->
+                    <div class="full-width-field mat-form-field" data-key="lastName">
+                        <label class="mat-label" for="lastName">Last Name</label>
+                        <input class="mat-input" type="text" id="lastName" placeholder="Enter patient last name" required minlength="2">
+                        <div class="mat-error" data-error-for="lastName" data-error-type="required">Last Name is required.</div>
+                        <div class="mat-error" data-error-for="lastName" data-error-type="minlength">Last Name must be at least 2 characters long.</div>
+                    </div>
+
+                    <!-- Date of Birth -->
+                    <div class="full-width-field mat-form-field" data-key="dateOfBirth">
+                        <label class="mat-label" for="dateOfBirth">Date of Birth</label>
+                        <input class="mat-input mat-datepicker-input" type="date" id="dateOfBirth" required>
+                        <span class="material-icons mat-datepicker-toggle">calendar_today</span>
+                        <div class="mat-error" data-error-for="dateOfBirth" data-error-type="required">Date of Birth is required.</div>
+                    </div>
+
+                    <!-- Gender (Radio Buttons) -->
+                    <div class="full-width-field mat-form-field" data-key="gender">
+                        <label class="mat-label">Gender</label>
+                        <div class="radio-group">
+                            <label class="mat-radio-button">
+                                <input type="radio" name="gender" value="male" required>
+                                Male
+                            </label>
+                            <label class="mat-radio-button">
+                                <input type="radio" name="gender" value="female">
+                                Female
+                            </label>
+                            <label class="mat-radio-button">
+                                <input type="radio" name="gender" value="other">
+                                Other
+                            </label>
+                        </div>
+                        <div class="mat-error" data-error-for="gender" data-error-type="required">Gender is required.</div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="full-width-field mat-form-field" data-key="email">
+                        <label class="mat-label" for="email">Email</label>
+                        <input class="mat-input" type="email" id="email" placeholder="Enter patient email">
+                        <div class="mat-error" data-error-for="email" data-error-type="email">Please enter a valid email address.</div>
+                    </div>
+
+                    <!-- Phone Number -->
+                    <div class="full-width-field mat-form-field" data-key="phone">
+                        <label class="mat-label" for="phone">Phone Number</label>
+                        <input class="mat-input" type="text" id="phone" placeholder="e.g., +1 (123) 456-7890" required pattern="^\+?\d{10,15}$">
+                        <div class="mat-error" data-error-for="phone" data-error-type="required">Phone Number is required.</div>
+                        <div class="mat-error" data-error-for="phone" data-error-type="pattern">Please enter a valid phone number.</div>
+                    </div>
+
+                    <!-- Blood Group (Select) -->
+                    <div class="full-width-field mat-form-field" data-key="bloodGroup">
+                        <label class="mat-label" for="bloodGroup">Blood Group</label>
+                        <select class="mat-select-input" id="bloodGroup">
+                            <option value="" disabled selected>Select blood group</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                        </select>
+                    </div>
+
+                    <!-- Address -->
+                    <div class="full-width-field mat-form-field" data-key="address">
+                        <label class="mat-label" for="address">Address</label>
+                        <input class="mat-input" type="text" id="address" placeholder="Enter patient address" required>
+                        <div class="mat-error" data-error-for="address" data-error-type="required">Address is required.</div>
+                    </div>
+
+                    <!-- Emergency Contact Name -->
+                    <div class="full-width-field mat-form-field" data-key="emergencyContactName">
+                        <label class="mat-label" for="emergencyContactName">Emergency Contact Name</label>
+                        <input class="mat-input" type="text" id="emergencyContactName" placeholder="Enter emergency contact name" required>
+                        <div class="mat-error" data-error-for="emergencyContactName" data-error-type="required">Emergency Contact Name is required.</div>
+                    </div>
+
+                    <!-- Emergency Contact Phone -->
+                    <div class="full-width-field mat-form-field" data-key="emergencyContactPhone">
+                        <label class="mat-label" for="emergencyContactPhone">Emergency Contact Phone</label>
+                        <input class="mat-input" type="text" id="emergencyContactPhone" placeholder="Enter emergency contact phone" required pattern="^\+?\d{10,15}$">
+                        <div class="mat-error" data-error-for="emergencyContactPhone" data-error-type="required">Emergency Contact Phone is required.</div>
+                        <div class="mat-error" data-error-for="emergencyContactPhone" data-error-type="pattern">Please enter a valid phone number.</div>
+                    </div>
+                </div>
+
+                <!-- Form Actions -->
+                <div class="form-actions">
+                    <button type="submit" id="submitButton" class="submit-button">
+                        <span class="material-icons">save</span> Register Patient
+                    </button>
+                    <button type="button" id="resetButton" class="reset-button">
+                        <span class="material-icons">refresh</span> Reset Form
+                    </button>
+                </div>
+            </form>
+        </div>
+</div>

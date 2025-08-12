@@ -1,0 +1,92 @@
+/*
+  Styling for the Angular Material Toolbar in the header.
+  - `background-color`: White background.
+  - `color`: Dark text.
+  - `box-shadow`: Mimics Tailwind's shadow for depth.
+  - `padding`: Matches Tailwind's py-4 px-6.
+  - `min-height`: Standard Material toolbar height.
+  - `display: flex`, `align-items`, `justify-content`: For layout of elements within the toolbar.
+  - `border-bottom-left-radius`, `border-bottom-right-radius`: Rounded bottom corners.
+*/
+.app-header-toolbar {
+  background-color: #ffffff;
+  color: #1f2937; /* text-gray-900 */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1); /* shadow-md */
+  padding: 16px 24px; /* py-4 px-6 */
+  min-height: 64px; /* Standard Angular Material toolbar height */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom-left-radius: 12px; /* rounded-xl */
+  border-bottom-right-radius: 12px; /* rounded-xl */
+}
+
+/* Application title within the header */
+.app-title-header {
+  font-size: 24px; /* text-2xl */
+  font-weight: bold; /* font-bold */
+  margin-left: 16px;
+}
+
+/* Spacer to push elements to the right */
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
+
+/* Container for user name and avatar */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 16px; /* space-x-4 */
+}
+
+/* User name styling */
+.user-name {
+  font-size: 14px; /* text-sm */
+  font-weight: 500; /* font-medium */
+}
+
+/* User avatar image styling */
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* rounded-full */
+  border: 2px solid #60a5fa; /* border-blue-400 */
+  object-fit: cover;
+}
+
+/* Styling for Material Design icon buttons (like the toggle button) */
+button.mat-icon-button {
+  border-radius: 50%; /* Ensures it's perfectly round */
+  transition: background-color 0.2s ease-in-out;
+}
+
+button.mat-icon-button:hover {
+  background-color: rgba(0, 0, 0, 0.04); /* Subtle hover background */
+}
+
+button.mat-icon-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.4); /* Focus ring */
+}
+
+/* Icon color for the toggle button */
+button.mat-icon-button mat-icon {
+  color: #4b5563; /* text-gray-600 */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .app-title-header {
+    font-size: 20px; /* Smaller title on mobile */
+    margin-left: 8px;
+  }
+
+  .user-info {
+    gap: 8px; /* Less space between user info on mobile */
+  }
+
+  .user-name {
+    display: none; /* Hide user name on very small screens to save space */
+  }
+}
