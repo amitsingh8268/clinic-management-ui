@@ -8,7 +8,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 })
 export class LayoutComponent {
  title = 'Angular Toggle Sidebar App'; // Your application title
- 
+
 
   // Reference to the MatSidenav component in the template.
   // This allows us to programmatically open/close it.

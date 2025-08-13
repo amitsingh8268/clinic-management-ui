@@ -245,4 +245,8 @@ export class PatientMockService {
     this.patients = this.patients.filter(p => p.id !== id);
     return of(true);
   }
+
+    getPatientById(id: number): Observable<Patient | undefined> {
+     return  of(this.patients.find(p => p.id !== id));
+  }
 }

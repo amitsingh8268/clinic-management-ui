@@ -11,6 +11,7 @@ import { FormValidationComponent } from './components/form-validation/form-valid
 import { FormValidationDirective } from './directives/form-validation.directive';
 import { GenericGridComponent } from './components/generic-grid/generic-grid.component';
 import { MaterialModule } from './material/material.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { MaterialModule } from './material/material.module';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
+    RouterModule
   ],
   exports: [
     CommonModule,

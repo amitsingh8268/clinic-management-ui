@@ -1,5 +1,10 @@
 <div class="patient-form-container">
-  <h2 class="form-title">Patient Registration</h2>
+    <div class="form-header">
+      <h2 class="form-title">Patient Registration</h2>
+      <button mat-stroked-button color="accent" routerLink="/patients">
+        <mat-icon>arrow_back</mat-icon> Back
+      </button>
+    </div>
   <form [formGroup]="patientForm" (ngSubmit)="onSubmit()" novalidate>
     
     <!-- Personal Information -->

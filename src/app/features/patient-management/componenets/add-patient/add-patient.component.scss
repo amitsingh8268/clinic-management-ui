@@ -94,6 +94,30 @@
   gap: 10px;
 }
 
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+
+    .actions {
+      display: flex;
+      gap: 8px;
+    }
+}
+
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.form-title {
+  margin: 0;
+}
+
+
 @media (max-width: 900px) {
   .patient-form-container {
     max-width: 95%;
