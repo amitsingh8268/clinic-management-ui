@@ -53,7 +53,7 @@ import {MatRadioModule} from '@angular/material/radio';
     MatProgressSpinnerModule,
     MatGridListModule,
     MatDividerModule, // Add this module for the list dividers
-    MatRadioModule
+    MatRadioModule,
   ]
 })
 export class MaterialModule {}

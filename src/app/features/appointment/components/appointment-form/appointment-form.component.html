@@ -1,1 +1,79 @@
-<p>appointment-form works!</p>
+<div class="appointment-form-container">
+  <div class="form-header">
+    <h2>Book Appointment</h2>
+    <button mat-stroked-button color="accent" routerLink="/appointments">
+      <mat-icon>arrow_back</mat-icon>
+      Back to Appointments
+    </button>
+  </div>
+
+  <form [formGroup]="appointmentForm" (ngSubmit)="onSubmit()" class="appointment-form">
+
+    <!-- Patient Information -->
+    <mat-card class="form-section">
+      <mat-card-title>Patient Information</mat-card-title>
+      <div class="form-row">
+        <mat-form-field appearance="outline">
+          <mat-label>Patient</mat-label>
+          <mat-select formControlName="patientId" required>
+            <mat-option *ngFor="let patient of patients" [value]="patient.id">
+              {{ patient.firstName }} {{ patient.lastName }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Doctor</mat-label>
+          <mat-select formControlName="doctorId" required>
+            <mat-option *ngFor="let doctor of doctors" [value]="doctor.id">
+              Dr. {{ doctor.name }} ({{ doctor.specialization }})
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </mat-card>
+
+    <!-- Appointment Details -->
+    <mat-card class="form-section">
+      <mat-card-title>Appointment Details</mat-card-title>
+      <div class="form-row">
+        <mat-form-field appearance="outline">
+          <mat-label>Date</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="date" required>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Time</mat-label>
+          <input matInput type="time" formControlName="time" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Duration (minutes)</mat-label>
+          <input matInput type="number" formControlName="duration" min="5" step="5">
+        </mat-form-field>
+      </div>
+
+      <div class="form-row">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Reason for Visit</mat-label>
+          <textarea matInput rows="2" formControlName="reason"></textarea>
+        </mat-form-field>
+      </div>
+    </mat-card>
+
+    <!-- Actions -->
+    <div class="form-actions">
+      <button mat-raised-button color="primary" type="submit" [disabled]="appointmentForm.invalid">
+        <mat-icon>check_circle</mat-icon>
+        Save Appointment
+      </button>
+      <button mat-raised-button color="warn" type="button" routerLink="/appointments">
+        <mat-icon>cancel</mat-icon>
+        Cancel
+      </button>
+    </div>
+
+  </form>
+</div>

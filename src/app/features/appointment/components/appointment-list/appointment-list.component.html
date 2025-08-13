@@ -1,1 +1,23 @@
-<p>appointment-list works!</p>
+<div class="appointment-list-container">
+  <div class="page-header">
+    <h2>Appointment Management</h2>
+    <div class="header-buttons">
+      <button mat-raised-button color="primary" routerLink="/appointments/new">
+        <mat-icon>add_circle</mat-icon>
+        New Appointment
+      </button>
+      <button mat-stroked-button color="accent" routerLink="/appointments/calendar">
+        <mat-icon>calendar_today</mat-icon>
+        View Calendar
+      </button>
+    </div>
+  </div>
+
+
+  <app-generic-grid
+    [columns]="appointmentColumns"
+    [data]="appointments"
+    [actions]="true"
+    (view)="viewDetails($event)">
+  </app-generic-grid>
+</div>

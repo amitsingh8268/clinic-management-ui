@@ -8,6 +8,11 @@ import { AppointmentFormComponent } from './components/appointment-form/appointm
 import { AppointmentCalendarComponent } from './components/appointment-calendar/appointment-calendar.component';
 import { AppointmentService } from './services/appointment.service';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { MaterialModule } from 'src/app/shared/material/material.module';
+
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+
 
 const routes = [
   { path: '', component: AppointmentListComponent },
@@ -26,7 +31,9 @@ const routes = [
     CommonModule,
     ReactiveFormsModule,
     SharedModule,
-    RouterModule.forChild(routes)
+    MaterialModule,
+    RouterModule.forChild(routes),
+    CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
   ],
   providers: [AppointmentService]
 })
