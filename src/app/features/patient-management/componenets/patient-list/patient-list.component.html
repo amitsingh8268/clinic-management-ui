@@ -1,1 +1,16 @@
-<p>patient-list works!</p>
+<div class="patient-list-container">
+  <!-- Page Header -->
+  <div class="page-header">
+    <h2>Patient Management</h2>
+    <button mat-raised-button color="primary" routerLink="/patients/new">
+      <mat-icon>person_add</mat-icon>
+      Add New Patient
+    </button>
+  </div>
+
+  <app-generic-grid
+    [columns]="patientColumns"
+    [data]="patients"
+    [actions]="true">
+  </app-generic-grid>
+</div>

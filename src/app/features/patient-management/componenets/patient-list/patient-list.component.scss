@@ -1,0 +1,38 @@
+.patient-list-container {
+  max-width: 1700px; 
+  margin: 2rem auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 100%;
+  width: 100%;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    color: #1f2937;
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 500;
+    padding: 8px 16px;
+  }
+}
+
+.search-bar {
+  .filter-box {
+    max-width: 100%;
+  }
+}

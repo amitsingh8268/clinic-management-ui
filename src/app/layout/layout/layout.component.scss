@@ -58,11 +58,16 @@
   overflow: auto; /* Allows vertical scrolling if content is long */
   padding: 24px; /* p-6 */
   background-color: #f3f4f6; /* Matches main container background */
-  display: flex; /* For centering the placeholder card */
+  //display: flex; /* For centering the placeholder card */
   justify-content: center;
   align-items: center;
   min-height: 200px; /* Minimum height for visual appearance */
 }
+
+// .main-content > * {
+//   width: 90%;
+//   height: 90%;
+// }
 
 /* Styling for the content card inside the main area */
 .content-card {
