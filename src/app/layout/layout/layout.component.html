@@ -1,9 +1,9 @@
 <mat-sidenav-container class="main-container">
   <mat-sidenav #sidenav [mode]="'over'" [(opened)]="isSidebarOpen" class="app-sidebar-panel">
-    <app-sidebar (linkClicked)="closeSidenav()"></app-sidebar>
+    <app-sidebar (linkClicked)="closeSidenav()" ></app-sidebar>
   </mat-sidenav>
   <mat-sidenav-content class="content-area">
-    <app-header [isSidebarOpen]="isSidebarOpen" (toggleSidebarEvent)="toggleSidenav()"></app-header>
+    <app-header [isSidebarOpen]="isSidebarOpen" (toggleSidebarEvent)="toggleSidenav()" (logoutEvent)="logout()" [user]="user"></app-header>
     <main class="main-content">
       <router-outlet></router-outlet>
     </main>

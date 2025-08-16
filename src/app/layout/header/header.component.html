@@ -1,27 +1,33 @@
-<!--
-  Angular Material Toolbar for the application header.
-  - `class="app-header-toolbar"`: Custom class for styling.
--->
 <mat-toolbar class="app-header-toolbar">
-  <!--
-    Toggle button for the sidebar.
-    - `mat-icon-button`: Styles it as a Material icon button.
-    - `(click)="onToggleSidebar()"`: Triggers the `onToggleSidebar` method, which emits an event.
-    - `aria-label`: Provides accessibility context for screen readers.
-  -->
+  <!-- Sidebar toggle -->
   <button mat-icon-button (click)="onToggleSidebar()" aria-label="Toggle sidebar">
-    <!-- Dynamically displays 'menu' (hamburger) or 'close' (X) icon based on `isSidebarOpen` input -->
     <mat-icon>{{ isSidebarOpen ? 'close' : 'menu' }}</mat-icon>
   </button>
 
   <span class="app-title-header">Clinical Management</span>
 
-  <!-- Spacer to push elements to the right -->
+  <!-- Spacer -->
   <span class="toolbar-spacer"></span>
 
   <!-- User Info Section -->
   <div class="user-info">
-    <span class="user-name">John Doe</span>
-    <img src="https://placehold.co/40x40/b8d6f2/265073?text=JD" alt="User Avatar" class="user-avatar"/>
+    <span class="user-name">{{ user.name | titlecase }}</span>
+
+    <!-- Avatar with dropdown menu -->
+    <button mat-icon-button [matMenuTriggerFor]="userMenu" class="avatar-btn">
+      <img 
+        [src]="'https://placehold.co/40x40/b8d6f2/265073?text=' + getInitials(user.name)"  
+        alt="User Avatar" 
+        class="user-avatar"
+      />
+    </button>
   </div>
 </mat-toolbar>
+
+<!-- User Menu -->
+<mat-menu #userMenu="matMenu">
+  <button mat-menu-item (click)="logout()">
+    <mat-icon>logout</mat-icon>
+    <span>Logout</span>
+  </button>
+</mat-menu>

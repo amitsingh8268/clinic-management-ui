@@ -1,5 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-layout',
@@ -8,6 +10,11 @@ import { MatSidenav } from '@angular/material/sidenav';
 })
 export class LayoutComponent {
  title = 'Angular Toggle Sidebar App'; // Your application title
+ user:any;
+
+ constructor(private authService: AuthService, private router: Router){
+    this.user = authService.currentUserValue
+ }
 
 
   // Reference to the MatSidenav component in the template.
@@ -36,5 +43,10 @@ export class LayoutComponent {
    */
   closeSidenav(): void {
     this.sidenav.close(); // Uses MatSidenav's built-in close method
+  }
+
+  logout(): void {
+    this.authService.logout();
+    this.router.navigate(['/login']);
   }
 }

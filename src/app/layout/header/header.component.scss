@@ -33,26 +33,31 @@
   flex: 1 1 auto;
 }
 
-/* Container for user name and avatar */
 .user-info {
   display: flex;
-  align-items: center;
-  gap: 16px; /* space-x-4 */
-}
+  align-items: center; // ✅ ensures vertical alignment
 
-/* User name styling */
-.user-name {
-  font-size: 14px; /* text-sm */
-  font-weight: 500; /* font-medium */
-}
+  .user-name {
+    margin-right: 10px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+  }
 
-/* User avatar image styling */
-.user-avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%; /* rounded-full */
-  border: 2px solid #60a5fa; /* border-blue-400 */
-  object-fit: cover;
+   .avatar-btn {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;  // ✅ centers the image inside
+    justify-content: center;
+
+    .user-avatar {
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: block;  // avoids baseline misalignment
+    }
+  }
 }
 
 /* Styling for Material Design icon buttons (like the toggle button) */

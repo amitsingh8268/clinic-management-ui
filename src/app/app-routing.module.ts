@@ -5,7 +5,7 @@ import { LayoutComponent } from './layout/layout/layout.component';
 
 const routes: Routes = [
   {
-    path: 'auth',
+    path: 'login',
     loadChildren: () => import('./features/auth/auth.module').then(m => m.AuthModule)
   },
   {
@@ -64,7 +64,7 @@ const routes: Routes = [
       { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
     ]
   },
-  { path: '**', redirectTo: '/dashboard' }
+  { path: '**', redirectTo: '/login' }
 ];
 
 @NgModule({
