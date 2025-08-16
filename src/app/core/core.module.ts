@@ -15,12 +15,6 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     AuthService,
     ApiService,
     NotificationService,
-    // AuthGuard,
-    // {
-    //   provide: HTTP_INTERCEPTORS,
-    //   useClass: AuthInterceptor,
-    //   multi: true
-    // }
   ]
 })
 export class CoreModule {
